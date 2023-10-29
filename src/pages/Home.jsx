@@ -2,6 +2,7 @@ import React from 'react';
 import { Container} from 'react-bootstrap';
 import NavbarTop from '../components/NavbarTop';
 import ExamOff from '../components/ExamOff';
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
@@ -24,11 +25,7 @@ const HomePage = () => {
         </ul>
       </Container>
 
-      <footer className="mt-5">
-        <Container>
-          <p>&copy; {new Date().getFullYear()} PrepTool. All rights reserved.</p>
-        </Container>
-      </footer>
+      <Footer />
     </div>
   );
 };
