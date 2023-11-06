@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.current-question {
+  background-color: #07ffb9; /* Add the highlight color of your choice */
+  color: #000; /* Change text color as needed */
+  font-weight: bold; /* Adjust font styling as needed */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,0 +1,213 @@
+[
+  {
+    "subject": "Physics",
+    "question": "What is the SI unit of electric charge?",
+    "options": ["Coulomb", "Volt", "Ampere", "Ohm"],
+    "correctAnswer": "Coulomb",
+    "explanation": "The SI unit of electric charge is the Coulomb (C)."
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the speed of light in a vacuum?",
+    "options": ["299,792,458 m/s", "300,000 m/s", "3,000 m/s", "30,000,000 m/s"],
+    "correctAnswer": "299,792,458 m/s",
+    "explanation": "The speed of light in a vacuum is approximately 299,792,458 meters per second (m/s)."
+  },
+  {
+    "subject": "Physics",
+    "question": "What is Newton's second law of motion?",
+    "options": [
+      "F = ma",
+      "F = m * v",
+      "F = m * g",
+      "F = m * a * g"
+    ],
+    "correctAnswer": "F = ma",
+    "explanation": "Newton's second law of motion states that the force (F) acting on an object is equal to the mass (m) of the object times its acceleration (a)."
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the principle of conservation of energy?",
+    "options": [
+      "Energy cannot be created or destroyed; it can only change forms.",
+      "Energy can be created or destroyed at will.",
+      "Energy is constantly decreasing in the universe.",
+      "Energy can only be conserved in closed systems."
+    ],
+    "correctAnswer": "Energy cannot be created or destroyed; it can only change forms.",
+    "explanation": "The principle of conservation of energy states that energy cannot be created or destroyed; it can only change from one form to another."
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the formula for calculating work done by a force?",
+    "options": [
+      "Work = Force × Distance",
+      "Work = Mass × Acceleration",
+      "Work = Power × Time",
+      "Work = Energy / Time"
+    ],
+    "correctAnswer": "Work = Force × Distance",
+    "explanation": "The formula for calculating work done by a force is Work = Force × Distance."
+  },
+  {
+    "subject": "Physics",
+    "question": "Which of the following waves requires a medium for propagation?",
+    "options": ["Sound waves", "Light waves", "X-rays", "Radio waves"],
+    "correctAnswer": "Sound waves",
+    "explanation": "Sound waves require a medium (such as air, water, or solids) for propagation."
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the unit of electrical resistance?",
+    "options": ["Ohm", "Ampere", "Volt", "Watt"],
+    "correctAnswer": "Ohm",
+    "explanation": "The unit of electrical resistance is the Ohm (Ω)."
+  },
+  {
+    "subject": "Physics",
+    "question": "Which of the following is a vector quantity?",
+    "options": ["Velocity", "Speed", "Temperature", "Time"],
+    "correctAnswer": "Velocity",
+    "explanation": "Velocity is a vector quantity because it has both magnitude and direction."
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the SI unit of pressure?",
+    "options": ["Pascal", "Newton", "Joule", "Watt"],
+    "correctAnswer": "Pascal",
+    "explanation": "The SI unit of pressure is the Pascal (Pa)."
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the atomic number of hydrogen?",
+    "options": ["1", "2", "3", "4"],
+    "correctAnswer": "1",
+    "explanation": "The atomic number of hydrogen is 1."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the chemical symbol for oxygen?",
+    "options": ["O", "O2", "H2O", "O3"],
+    "correctAnswer": "O",
+    "explanation": "The chemical symbol for oxygen is O."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the pH of a neutral solution?",
+    "options": ["7", "1", "14", "0"],
+    "correctAnswer": "7",
+    "explanation": "The pH of a neutral solution is 7."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which element is a noble gas?",
+    "options": ["Helium", "Oxygen", "Carbon", "Sodium"],
+    "correctAnswer": "Helium",
+    "explanation": "Helium is a noble gas."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the chemical formula for water?",
+    "options": ["H2O2", "CO2", "H2O", "CH4"],
+    "correctAnswer": "H2O",
+    "explanation": "The chemical formula for water is H2O."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which gas is responsible for the greenhouse effect?",
+    "options": ["Carbon dioxide (CO2)", "Oxygen (O2)", "Nitrogen (N2)", "Hydrogen (H2)"],
+    "correctAnswer": "Carbon dioxide (CO2)",
+    "explanation": "Carbon dioxide (CO2) is a greenhouse gas responsible for the greenhouse effect."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the smallest unit of an element that retains its chemical properties?",
+    "options": ["Atom", "Molecule", "Cell", "Proton"],
+    "correctAnswer": "Atom",
+    "explanation": "The smallest unit of an element that retains its chemical properties is an atom."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which gas is evolved when an acid reacts with a metal?",
+    "options": ["Hydrogen (H2)", "Oxygen (O2)", "Carbon dioxide (CO2)", "Chlorine (Cl2)"],
+    "correctAnswer": "Hydrogen (H2)",
+    "explanation": "Hydrogen gas (H2) is evolved when an acid reacts with a metal."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the chemical name for baking soda?",
+    "options": ["Sodium chloride", "Sodium bicarbonate", "Sodium carbonate", "Sodium hydroxide"],
+    "correctAnswer": "Sodium bicarbonate",
+    "explanation": "The chemical name for baking soda is sodium bicarbonate."
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which gas is known as 'laughing gas'?",
+    "options": ["Nitrous oxide (N2O)", "Carbon monoxide (CO)", "Oxygen (O2)", "Nitrogen (N2)"],
+    "correctAnswer": "Nitrous oxide (N2O)",
+    "explanation": "Nitrous oxide (N2O) is known as 'laughing gas.'"
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the value of π (pi) to three decimal places?",
+    "options": ["3.142", "3.141", "3.140", "3.143"],
+    "correctAnswer": "3.142",
+    "explanation": "The value of π (pi) to three decimal places is 3.142."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the area of a square with a side length of 5 units?",
+    "options": ["20 square units", "25 square units", "30 square units", "35 square units"],
+    "correctAnswer": "25 square units",
+    "explanation": "The area of a square with a side length of 5 units is 25 square units."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the square root of 144?",
+    "options": ["10", "12", "14", "16"],
+    "correctAnswer": "12",
+    "explanation": "The square root of 144 is 12."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the value of sin(30 degrees)?",
+    "options": ["0", "1", "0.5", "2"],
+    "correctAnswer": "0.5",
+    "explanation": "The value of sin(30 degrees) is 0.5."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the value of 2^3?",
+    "options": ["4", "6", "8", "16"],
+    "correctAnswer": "8",
+    "explanation": "The value of 2^3 is 8."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve for x: 2x + 3 = 7",
+    "options": ["x = 1", "x = 2", "x = 3", "x = 4"],
+    "correctAnswer": "x = 2",
+    "explanation": "Solving the equation 2x + 3 = 7, we find x = 2."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the perimeter of a rectangle with length 8 units and width 6 units?",
+    "options": ["20 units", "30 units", "40 units", "48 units"],
+    "correctAnswer": "28 units",
+    "explanation": "The perimeter of a rectangle with length 8 units and width 6 units is 28 units."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the sum of the interior angles of a triangle?",
+    "options": ["90 degrees", "180 degrees", "270 degrees", "360 degrees"],
+    "correctAnswer": "180 degrees",
+    "explanation": "The sum of the interior angles of a triangle is 180 degrees."
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Find the value of 4! (4 factorial).",
+    "options": ["12", "24", "36", "48"],
+    "correctAnswer": "24",
+    "explanation": "4! (4 factorial) is equal to 24."
+  }
+]
