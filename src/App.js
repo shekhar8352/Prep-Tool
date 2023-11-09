@@ -8,6 +8,10 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 import Dashboard from './pages/Dashboard';
 import Quiz from './pages/Quiz';
+import CreateExam from './components/CreateExam';
+import AddExamType from './components/AddExamType';
+import AddQuestion from './components/AddQuestion';
+
 
 function App() {
   return (
@@ -19,9 +23,9 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/quiz" element={<Quiz />} />
-
-
-
+        <Route path="/create-exam" element={<CreateExam />} />
+          <Route path="/add-question" element={<AddQuestion />} />
+          <Route path="/add-exam-type" element={<AddExamType />} />
       </Routes>
     </BrowserRouter>
   );

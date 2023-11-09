@@ -34,9 +34,27 @@ function Quiz() {
       }
     }, 1000);
 
+
     // Cleanup the timer when the component unmounts
     return () => clearInterval(timer);
   }, [timeLeft]);
+
+
+  useEffect(() => {
+    // Add an event listener for the exit fullscreen action
+    document.addEventListener('fullscreenchange', handleExitFullscreen);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleExitFullscreen);
+    };
+  }, []);
+  
+  const handleExitFullscreen = () => {
+    if (!document.fullscreenElement) {
+      // If the user exits fullscreen, end the quiz immediately
+      handleQuizFinish();
+    }
+  };
+  
 
   const handleOptionSelect = (option) => {
     const updatedResponses = [...userResponses];
@@ -62,13 +80,13 @@ function Quiz() {
     setUserResponses(updatedResponses);
   };
 
-  const handleQuestionSubmit = () => {
-    if (currentQuestion < jeeQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      handleQuizFinish();
-    }
-  };
+  // const handleQuestionSubmit = () => {
+  //   if (currentQuestion < jeeQuestions.length - 1) {
+  //     setCurrentQuestion(currentQuestion + 1);
+  //   } else {
+  //     handleQuizFinish();
+  //   }
+  // };
 
   const handleQuizFinish = () => {
     let totalScore = 0;
@@ -95,9 +113,26 @@ function Quiz() {
     }
   };
 
+  // const handleStartQuiz = () => {
+  //   // Start the quiz when the "Start Quiz" button is clicked
+  //   setQuizStarted(true);
+  // };
+
   const handleStartQuiz = () => {
-    // Start the quiz when the "Start Quiz" button is clicked
-    setQuizStarted(true);
+    // Request fullscreen mode when the quiz starts
+    const element = document.documentElement; // Fullscreen the entire page
+    if (element.requestFullscreen) {
+      element.requestFullscreen().then(() => {
+        setQuizStarted(true); // Start the quiz when fullscreen request is accepted
+      });
+    }
+  };
+
+  const handleClearResponse = () => {
+    const updatedResponses = [...userResponses];
+    updatedResponses[currentQuestion].response = ''; 
+    updatedResponses[currentQuestion].attempted = false;// Clear the selected option
+    setUserResponses(updatedResponses);
   };
 
   return (
@@ -127,10 +162,12 @@ function Quiz() {
                 <div className="question-panel"></div>
                 <p className="mb-3">Time Left: {timeLeft} seconds</p>
                 <Question
+                 questionNumber={currentQuestion + 1}
                   question={jeeQuestions[currentQuestion].question}
                   options={jeeQuestions[currentQuestion].options}
                   selectedOption={userResponses[currentQuestion].response}
                   onOptionSelect={handleOptionSelect}
+                  onClearResponse={handleClearResponse}
                 />
                 <div className="mt-3">
                   <button

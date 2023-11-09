@@ -1,0 +1,33 @@
+[
+  {
+    "examName": "JEE",
+    "numSections": 3,
+    "isFixedQuestions": true,
+    "numQuestionsPerSection": 20,
+    "sections": [
+      {"name": "Physics", "numQuestions": 20},
+      {"name": "Chemistry", "numQuestions": 20},
+      {"name": "Mathematics", "numQuestions": 20}
+    ]
+  },
+  {
+    "examName": "NEET",
+    "numSections": 2,
+    "isFixedQuestions": false,
+    "numQuestionsPerSection": 0,
+    "sections": [
+      {"name": "Biology", "numQuestions": 25},
+      {"name": "Chemistry", "numQuestions": 25}
+    ]
+  },
+  {
+    "examName": "CAT",
+    "numSections": 2,
+    "isFixedQuestions": true,
+    "numQuestionsPerSection": 30,
+    "sections": [
+      {"name": "Quantitative Aptitude", "numQuestions": 30},
+      {"name": "Verbal Ability", "numQuestions": 30}
+    ]
+  }
+]

@@ -1,27 +1,26 @@
 import React from 'react';
 
-function Question({
-  question,
-  options,
-  selectedOption,
-  onOptionSelect,
-}) {
+function Question({ questionNumber, question, options, selectedOption, onOptionSelect, onClearResponse }) {
   return (
     <div>
+    <p>Question {questionNumber}:</p>
       <p>{question}</p>
       {options.map((option, index) => (
-        <label key={index} className="form-check">
+        <div key={index}>
           <input
             type="radio"
-            name="option"
+            name="options"
+            id={`option${index}`}
             value={option}
             checked={selectedOption === option}
             onChange={() => onOptionSelect(option)}
-            className="form-check-input"
           />
-          {option}
-        </label>
+          <label htmlFor={`option${index}`}>{option}</label>
+        </div>
       ))}
+      <button onClick={onClearResponse} className="btn btn-danger">
+        Clear Response
+      </button>
     </div>
   );
 }

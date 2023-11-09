@@ -30,9 +30,9 @@ function DirectionPanel({
       } else if (userResponses[index].flagged) {
         buttonColorClass += 'btn-warning';
       }
-      // } else if (!isCorrect) {
-      //   buttonColorClass += 'btn-danger';
-      // } 
+      else if (userResponses[index].flagged && userResponses[index].attempted) {
+       buttonColorClass += 'btn-danger';
+      } 
       else {
         buttonColorClass += 'btn-success';
       }
