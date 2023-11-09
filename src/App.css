@@ -34,6 +34,12 @@
   font-weight: bold; /* Adjust font styling as needed */
 }
 
+.light-mode {
+  background-color: #fff; /* Set your desired light background color */
+  color: #000; /* Set your desired light text color */
+  /* Add other styles for light mode as needed */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
