@@ -5,7 +5,7 @@ import DirectionPanel from "../components/DirectionPanel";
 import Question from "../components/Question";
 import Instructions from "../components/Instructions";
 
-import jeeQuestions from "./question.json";
+import jeeQuestions from "../Sample Data/question.json";
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -19,7 +19,7 @@ function Quiz() {
   );
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [timeLeft, setTimeLeft] = useState(300);
   const [quizStarted, setQuizStarted] = useState(false);
 
   // Timer function to update timeLeft every second

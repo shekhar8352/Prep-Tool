@@ -1,23 +1,46 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
-    dob: '',
+    // dob: '',
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send data to the server)
-    console.log(formData);
+    try {
+      const response = await fetch('http://localhost:5000/api/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('User registered successfully:', data);
+        // Redirect or perform other actions upon successful registration
+        localStorage.setItem('token', data.token);
+        // history.push('/dashboard');
+        navigate('/dashboard');
+      } else {
+        console.error('Failed to register user');
+      }
+    } catch (error) {
+      console.error('Error registering user:', error);
+    }
   };
 
   return (
@@ -58,7 +81,7 @@ const SignUp = () => {
           />
         </Form.Group>
 
-        <Form.Group controlId="dob">
+        {/* <Form.Group controlId="dob">
           <Form.Label>Date of Birth</Form.Label>
           <Form.Control
             type="date"
@@ -67,7 +90,7 @@ const SignUp = () => {
             onChange={handleChange}
             required
           />
-        </Form.Group>
+        </Form.Group> */}
 
         <Button variant="primary" type="submit">
           Sign Up

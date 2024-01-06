@@ -1,8 +1,6 @@
-// import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-// import SignupPage from './pages/SignUp';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
@@ -12,22 +10,40 @@ import CreateExam from './components/CreateExam';
 import AddExamType from './components/AddExamType';
 import AddQuestion from './components/AddQuestion';
 
+const isAuthenticated = !!localStorage.getItem('token');
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <Home />
+            )
+          }
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/create-exam" element={<CreateExam />} />
-          <Route path="/add-question" element={<AddQuestion />} />
-          <Route path="/add-exam-type" element={<AddExamType />} />
+
+        {isAuthenticated ? (
+          <>
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/create-exam" element={<CreateExam />} />
+            <Route path="/add-question" element={<AddQuestion />} />
+            <Route path="/add-exam-type" element={<AddExamType />} />
+          </>
+        ) : (
+          // Placeholder route for unauthenticated users
+          <Route path="*" element={<Navigate to="/" replace />} />
+        )}
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

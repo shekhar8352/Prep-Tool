@@ -12,11 +12,35 @@ const Login = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login submission here (e.g., send data to the server for authentication)
-    console.log(formData);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/authuser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('User logged in successfully:', data);
+
+        // Save the token to local storage
+        localStorage.setItem('token', data.token);
+
+        // Redirect to the dashboard or another page after login
+        window.location.href = '/dashboard';
+      } else {
+        console.error('Failed to log in user');
+      }
+    } catch (error) {
+      console.error('Error logging in user:', error);
+    }
   };
+
 
   return (
     <Container>
