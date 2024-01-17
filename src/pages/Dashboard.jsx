@@ -1,10 +1,12 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { Container, Card, Row, Col, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavbarNormal from '../components/NavbarNormal';
 import Upcoming from '../components/Upcoming';
 import RecentProb from '../components/RecentProb';
 import Footer from '../components/Footer';
+import axios from 'axios';
 
 const Dashboard = () => {
   const recentExams = [
@@ -13,6 +15,9 @@ const Dashboard = () => {
     { title: 'Sample Exam 3', score: 92, id: 3},
     // Add more recent exams as needed
   ];
+
+  // const [user, setUser] = useState({ name: '' });
+
 
   const enrolledExams = [
     {
@@ -40,7 +45,7 @@ const Dashboard = () => {
     <NavbarNormal />
 
       <Container className="mt-4">
-        <h2>Welcome, John Doe</h2>
+        <h2>Welcome, John</h2>
         <p>Your upcoming exams and recent performance:</p>
       </Container>
 

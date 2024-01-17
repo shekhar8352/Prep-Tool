@@ -7,8 +7,6 @@ import Admin from './pages/Admin';
 import Dashboard from './pages/Dashboard';
 import Quiz from './pages/Quiz';
 import CreateExam from './components/CreateExam';
-import AddExamType from './components/AddExamType';
-import AddQuestion from './components/AddQuestion';
 
 const isAuthenticated = !!localStorage.getItem('token');
 
@@ -16,7 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             isAuthenticated ? (
@@ -41,7 +39,14 @@ function App() {
         ) : (
           // Placeholder route for unauthenticated users
           <Route path="*" element={<Navigate to="/" replace />} />
-        )}
+        )} */}
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/create-exam" element={<CreateExam />} />
       </Routes>
     </Router>
   );
