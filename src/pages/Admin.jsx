@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import AddQuestion from '../components/AddQuestions';
-import AddTopic from '../components/AddTopic';
-import AddSubject from '../components/AddSubject';
-import AddMockTest from '../components/AddMockTest';
-import AddExam from '../components/AddExam';
+import AdminQuestion from "../components/AdminQuestions";
+import AdminTopic from "../components/AdminTopic";
+import AdminSubject from "../components/AdminSubject";
+import AdminMockTest from "../components/AdminMockTest";
+import AdminExam from "../components/AdminExam";
 
 function Admin() {
-  const [activeTab, setActiveTab] = useState('add-question');
+  const [activeTab, setActiveTab] = useState("add-question");
   const [statistics, setStatistics] = useState({
     totalExams: 10,
     totalMockTests: 5,
@@ -17,11 +17,14 @@ function Admin() {
     // Add more statistics as needed
   });
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
-    // Perform logout logic
-    console.log('Logout logic');
-    // Navigate to the home route or any other route after logout
-    // Implement your actual navigation logic here
+    // Clear the token from local storage
+    localStorage.removeItem("token");
+    // Redirect the user to the home route
+    navigate("/");
+    window.location.reload();
   };
 
   const handleTabClick = (tab) => {
@@ -30,16 +33,16 @@ function Admin() {
 
   const renderActiveTab = () => {
     switch (activeTab) {
-      case 'add-question':
-        return <AddQuestion />;
-      case 'add-topic':
-        return <AddTopic />;
-      case 'add-subject':
-        return <AddSubject />;
-      case 'add-mock-test':
-        return <AddMockTest />;
-      case 'add-exam':
-        return <AddExam />;
+      case "add-question":
+        return <AdminQuestion />;
+      case "add-topic":
+        return <AdminTopic />;
+      case "add-subject":
+        return <AdminSubject />;
+      case "add-mock-test":
+        return <AdminMockTest />;
+      case "add-exam":
+        return <AdminExam />;
       default:
         return null;
     }
@@ -49,47 +52,60 @@ function Admin() {
     <div className="container-fluid">
       <div className="row">
         {/* Sidebar */}
-        <div id="sidebar" className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div
+          id="sidebar"
+          className="col-md-3 col-lg-2 d-md-block bg-light sidebar"
+        >
           <div className="sidebar-sticky">
             <ul className="nav flex-column">
               <li className="nav-item">
                 <div
-                  className={`nav-link ${activeTab === 'add-question' ? 'active' : ''}`}
-                  onClick={() => handleTabClick('add-question')}
+                  className={`nav-link ${
+                    activeTab === "add-question" ? "active" : ""
+                  }`}
+                  onClick={() => handleTabClick("add-question")}
                 >
-                  Add Question
+                  Question
                 </div>
               </li>
               <li className="nav-item">
                 <div
-                  className={`nav-link ${activeTab === 'add-topic' ? 'active' : ''}`}
-                  onClick={() => handleTabClick('add-topic')}
+                  className={`nav-link ${
+                    activeTab === "add-topic" ? "active" : ""
+                  }`}
+                  onClick={() => handleTabClick("add-topic")}
                 >
-                  Add Topic
+                  Topic
                 </div>
               </li>
               <li className="nav-item">
                 <div
-                  className={`nav-link ${activeTab === 'add-subject' ? 'active' : ''}`}
-                  onClick={() => handleTabClick('add-subject')}
+                  className={`nav-link ${
+                    activeTab === "add-subject" ? "active" : ""
+                  }`}
+                  onClick={() => handleTabClick("add-subject")}
                 >
-                  Add Subject
+                  Subject
                 </div>
               </li>
               <li className="nav-item">
                 <div
-                  className={`nav-link ${activeTab === 'add-mock-test' ? 'active' : ''}`}
-                  onClick={() => handleTabClick('add-mock-test')}
+                  className={`nav-link ${
+                    activeTab === "add-mock-test" ? "active" : ""
+                  }`}
+                  onClick={() => handleTabClick("add-mock-test")}
                 >
-                  Add Mock Test
+                  Mock Test
                 </div>
               </li>
               <li className="nav-item">
                 <div
-                  className={`nav-link ${activeTab === 'add-exam' ? 'active' : ''}`}
-                  onClick={() => handleTabClick('add-exam')}
+                  className={`nav-link ${
+                    activeTab === "add-exam" ? "active" : ""
+                  }`}
+                  onClick={() => handleTabClick("add-exam")}
                 >
-                  Add Exam
+                  Exam
                 </div>
               </li>
             </ul>

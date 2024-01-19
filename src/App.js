@@ -1,52 +1,54 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
-import SignUp from './pages/SignUp';
-import Login from './pages/Login';
-import Admin from './pages/Admin';
-import Dashboard from './pages/Dashboard';
-import Quiz from './pages/Quiz';
-import CreateExam from './components/CreateExam';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Home from "./pages/Home";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import Admin from "./pages/Admin";
+import Dashboard from "./pages/Dashboard";
+import Quiz from "./pages/Quiz";
+import AdminLogin from "./pages/AdminLogin";
+import AdminSignUp from "./pages/AdminSignUp";
 
-const isAuthenticated = !!localStorage.getItem('token');
+const isAuthenticated = !!localStorage.getItem("token");
+const isAdmin = localStorage.getItem("role") === "admin";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route
+        <Route
           path="/"
           element={
-            isAuthenticated ? (
-              <Navigate to="/dashboard" replace />
-            ) : (
-              <Home />
-            )
+            isAuthenticated ? <Navigate to="/dashboard" replace /> : <Home />
           }
         />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path="/adminsignup" element={<AdminSignUp />} />
 
         {isAuthenticated ? (
-          <>
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/create-exam" element={<CreateExam />} />
-            <Route path="/add-question" element={<AddQuestion />} />
-            <Route path="/add-exam-type" element={<AddExamType />} />
-          </>
+          isAdmin ? (
+            <>
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/quiz" element={<Quiz />} />
+            </>
+          ) : (
+            <>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/quiz" element={<Quiz />} />
+            </>
+          )
         ) : (
           // Placeholder route for unauthenticated users
           <Route path="*" element={<Navigate to="/" replace />} />
-        )} */}
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/create-exam" element={<CreateExam />} />
+        )}
       </Routes>
     </Router>
   );

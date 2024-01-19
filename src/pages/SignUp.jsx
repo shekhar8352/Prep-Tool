@@ -33,6 +33,7 @@ const SignUp = () => {
         console.log('User registered successfully:', data);
         // Redirect or perform other actions upon successful registration
         localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
         // history.push('/dashboard');
         navigate('/dashboard');
       } else {

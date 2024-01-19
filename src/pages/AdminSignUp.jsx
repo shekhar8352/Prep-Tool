@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const AdminSignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,8 +33,9 @@ const SignUp = () => {
         console.log('User registered successfully:', data);
         // Redirect or perform other actions upon successful registration
         localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
         // history.push('/dashboard');
-        navigate('/dashboard');
+        navigate('/admin');
       } else {
         console.error('Failed to register user');
       }
@@ -100,4 +101,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default AdminSignUp;

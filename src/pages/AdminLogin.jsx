@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 
-const Login = () => {
+const AdminLogin = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -30,6 +30,7 @@ const Login = () => {
 
         // Save the token to local storage
         localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.user.role);
 
         // Redirect to the dashboard or another page after login
         window.location.href = '/admin';
@@ -76,4 +77,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

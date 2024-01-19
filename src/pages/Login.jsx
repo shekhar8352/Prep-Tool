@@ -30,7 +30,7 @@ const Login = () => {
 
         // Save the token to local storage
         localStorage.setItem('token', data.token);
-
+        localStorage.setItem('role', data.role);
         // Redirect to the dashboard or another page after login
         window.location.href = '/dashboard';
       } else {
