@@ -3,7 +3,7 @@ import { Container, Form, Button } from 'react-bootstrap';
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: '',
   });
 
@@ -30,7 +30,6 @@ const Login = () => {
 
         // Save the token to local storage
         localStorage.setItem('token', data.token);
-        localStorage.setItem('role', data.role);
         // Redirect to the dashboard or another page after login
         window.location.href = '/dashboard';
       } else {
@@ -41,17 +40,16 @@ const Login = () => {
     }
   };
 
-
   return (
     <Container>
       <h2>Login</h2>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="email">
-          <Form.Label>Email</Form.Label>
+        <Form.Group controlId="username">
+          <Form.Label>Username</Form.Label>
           <Form.Control
-            type="email"
-            name="email"
-            value={formData.email}
+            type="text"
+            name="username"
+            value={formData.username}
             onChange={handleChange}
             required
           />

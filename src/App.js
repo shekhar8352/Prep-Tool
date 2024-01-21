@@ -13,6 +13,7 @@ import Dashboard from "./pages/Dashboard";
 import Quiz from "./pages/Quiz";
 import AdminLogin from "./pages/AdminLogin";
 import AdminSignUp from "./pages/AdminSignUp";
+import Onboarding from "./pages/Onboarding";
 
 const isAuthenticated = !!localStorage.getItem("token");
 const isAdmin = localStorage.getItem("role") === "admin";
@@ -31,6 +32,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/adminsignup" element={<AdminSignUp />} />
+        <Route path="/onboarding" element={<Onboarding />} />
 
         {isAuthenticated ? (
           isAdmin ? (

@@ -4,10 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    first_name: '',
+    last_name: '',
+    username: '',
     email: '',
     password: '',
-    // dob: '',
   });
 
   const navigate = useNavigate();
@@ -31,11 +32,9 @@ const SignUp = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('User registered successfully:', data);
-        // Redirect or perform other actions upon successful registration
         localStorage.setItem('token', data.token);
         localStorage.setItem('role', data.role);
-        // history.push('/dashboard');
-        navigate('/dashboard');
+        navigate('/onboarding');
       } else {
         console.error('Failed to register user');
       }
@@ -48,12 +47,34 @@ const SignUp = () => {
     <Container>
       <h2>Sign Up</h2>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="name">
-          <Form.Label>Name</Form.Label>
+        <Form.Group controlId="first_name">
+          <Form.Label>First Name</Form.Label>
           <Form.Control
             type="text"
-            name="name"
-            value={formData.name}
+            name="first_name"
+            value={formData.first_name}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+
+        <Form.Group controlId="last_name">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="last_name"
+            value={formData.last_name}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+
+        <Form.Group controlId="username">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="text"
+            name="username"
+            value={formData.username}
             onChange={handleChange}
             required
           />
@@ -82,19 +103,8 @@ const SignUp = () => {
           />
         </Form.Group>
 
-        {/* <Form.Group controlId="dob">
-          <Form.Label>Date of Birth</Form.Label>
-          <Form.Control
-            type="date"
-            name="dob"
-            value={formData.dob}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group> */}
-
         <Button variant="primary" type="submit">
-          Sign Up
+          Next
         </Button>
       </Form>
     </Container>
