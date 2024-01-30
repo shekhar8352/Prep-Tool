@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import ViewQuestions from './ViewQuestions'; // Import the component for viewing questions
-import AddQuestion from './AddQuestion'; // Import the component for adding questions
+import ViewQuestions from './ViewQuestions';
+import AddQuestion from './AddQuestion';
 
 const AdminQuestions = () => {
   const [activeTab, setActiveTab] = useState('add-question');
